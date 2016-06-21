@@ -1,0 +1,33 @@
+ <md-toolbar  md-scroll-shrink>
+   <div class="md-toolbar-tools">
+     <h2>
+       <span>Too Many Donkeys</span>
+     </h2>
+     <span flex></span>
+     <md-button class="md-raised" aria-label="Learn More" ng-click="main.getRandom()">
+          Get Random Episode
+     </md-button>
+     <md-button class="md-mini" aria-label="Filter List">
+       <i class="material-icons">filter_list</i>
+     </md-button>
+   </div>
+ </md-toolbar>
+
+ <div layout layout-padding layout-wrap>
+    <div flex-auto ng-repeat="episode in main.episodes">
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{episode.number}}: {{episode.title}}</span>
+            <span class="md-subhead">{{episode.date}}</span>
+          </md-card-title-text>
+          <i class="material-icons">queue_music</i>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+          <md-card-actions layout>
+            <md-button class="md-raised" ng-repeat="who in episode.who">{{who}}</md-button>
+          </md-card-actions>
+        </md-card-content>
+      </md-card>
+    </div>
+ </div>
